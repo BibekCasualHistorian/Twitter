@@ -1,0 +1,79 @@
+html {
+    font-size: 16px;
+}
+
+body { 
+    padding: 0.5rem;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 450px;
+    margin: auto;
+    border: 1px red solid;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-around;
+}
+
+header p {
+    color: #1DA1F2;
+    margin-left: 50px;
+    font-weight: 800;
+    font-size: 2rem;
+}
+
+.tweet-place {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 1rem;
+}
+
+.image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+textarea {
+    width: 250px;
+    height: 100px;
+    resize: none;
+    border: none;
+}
+
+#submit-button {
+    margin: 1rem auto;
+    padding: 0.8rem 10rem;
+    background-color: #1DA1F2;
+    border-radius: 4rem;
+    border: none;
+    color: white;
+    font-size: 2rem;
+}
+
+.tweet-details {
+    display: flex;
+    justify-content: space-around;
+}
+
+.fa-solid {
+    color: #999;
+}
+
+.hearted {
+    color: red;
+}
+
+.retweeted {
+    color: rgb(0, 97, 0);
+}
+
+.hidden {
+    display: none;
+}
+
+.replied {
+    display: flex;
+    justify-content: end;
+}
