@@ -1,61 +1,4 @@
-const tweetsData = [   
-    {
-        handle: `@TrollBot66756542 💎`,
-        profilePic: `images/troll.png`,
-        likes: 27,
-        retweets: 10,
-        tweetText: `Buy Bitcoin, ETH Make 💰💰💰 low low prices. 
-            Guaranteed return on investment. HMU DMs open!!`,
-        replies: [],
-        isLiked: false,
-        isRetweeted: false,
-        uuid: '4b161eee-c0f5-4545-9c4b-8562944223ee',
-    },    
-    {
-        handle: `@Elon ✅`,
-        profilePic: `images/elon.png`,
-        likes: 6500,
-        retweets: 234,
-        tweetText: `I need volunteers for a one-way mission to Mars 🪐. No experience necessary🚀`,
-        replies: [
-                  {
-                handle: `@TomCruise ✅`,
-                profilePic: `images/tom.jpg`,
-                tweetText: `Yes! Sign me up! 😎🛩`,
-            },
-                  {
-                handle: `@CrazyWoman ✅`,
-                profilePic: `images/woman.jpg`,
-                tweetText: `I went last year😴`,
-            },
-        ],
-        isLiked: false,
-        isRetweeted: false,
-        uuid: '3c23454ee-c0f5-9g9g-9c4b-77835tgs2',
-    },
-        {
-        handle: `@NoobCoder12`,
-        profilePic: `images/unknown.png`,
-        likes: 10,
-        retweets: 3,
-        tweetText: `Are you a coder if you only know HTML?`,
-        replies: [
-            {
-                handle: `@StackOverflower ☣️`,
-                profilePic: `images/man.png`,
-                tweetText: `No. Obviosuly not. Go get a job in McDonald's.`,
-            },
-            {
-                handle: `@YummyCoder64`,
-                profilePic: `images/hands.jpg`,
-                tweetText: `You are wonderful just as you are! ❤️`,
-            },
-        ],
-        isLiked: false,
-        isRetweeted: false,
-        uuid: '8hy671sff-c0f5-4545-9c4b-1237gyys45',
-    },  
-]
+import { v4 as uuidv4 } from 'https://jspm.dev/uuid';
 
 document.addEventListener("click",function(e) {
     if(e.target.dataset.heart) {
@@ -69,34 +12,8 @@ document.addEventListener("click",function(e) {
     }
 })
 
-function uuidGenerator() {
-    const source = [0,1,2,3,4,5,6,7,8,9,"q","w","e","r","t","y","u","i","o","p","a","s","d","f","g","h","j","k","l","z","x","c","v","b","n","m"]
-    const exampleuuid = `4b161eee-c0f5-4545-9c4b-8562944223ee`
-    let newuuid = ``
-
-    for (let i = 0; i < exampleuuid.length; i++) {
-        const num = Math.floor(Math.random()*(source.length+1))
-
-        if(i%5) {
-            newuuid += `${source[num]}`
-        } else {
-            if( i===0 || i===(exampleuuid.length-1)) {
-                newuuid += `${source[num]}`
-            } else {
-                newuuid += `-`
-            }
-        }
-
-    }
-    return (newuuid)
-}
-
-uuidGenerator()
-
 function newTweet() {
     const tweetInput = document.getElementById('tweet-write')
-
-    console.log(tweetInput.value)
 
     if(tweetInput.value) {
         tweetsData.push({
@@ -108,7 +25,7 @@ function newTweet() {
             replies: [],
             isLiked: false,
             isRetweeted: false,
-            uuid: `${uuidGenerator()}`
+            uuid: `${uuidv4()}`
         })
     }
     render()
